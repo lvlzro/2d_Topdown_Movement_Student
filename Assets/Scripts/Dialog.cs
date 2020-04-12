@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,9 +6,9 @@ public class Dialog : MonoBehaviour
 {
     public Text dialogBox;
     public GameObject dialogPanel;
+    public GameObject buttom;
     public GameObject interactPopUp;
     public string[] lines;
-
 
 
     private float typingSpeed = 0.05f;
@@ -32,8 +31,8 @@ public class Dialog : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
     }
-      
-    private void NextLine()
+
+    public void NextLine()
     {
         if (dialogBox.text != lines[index])
         {
@@ -44,13 +43,16 @@ public class Dialog : MonoBehaviour
         {
             index++;
             dialogBox.text = "";
-            StopAllCoroutines();
+            //have to restart the coroutine for the new line
+            StartCoroutine(type());
+
         }
         else if (index == lines.Length - 1)
         {
             dialogBox.text = "";
             interactPopUp.SetActive(false);
             dialogPanel.SetActive(false);
+            buttom.SetActive(false);
             isTalking = false;
             playerMoving.enabled = true;
         }
@@ -65,21 +67,21 @@ public class Dialog : MonoBehaviour
     {
         if (!isTalking)
         {
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.KeypadEnter))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
             {
                 interactPopUp.SetActive(false);
                 dialogPanel.SetActive(true);
+                buttom.SetActive(true);
                 StartCoroutine(type());
-
-                playerMoving.enabled = false;
-
                 isTalking = true;
+                playerMoving.enabled = false;
             }
         }
         else
         {
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.KeypadEnter))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
             {
+                Debug.Log("next line");
                 NextLine();
             }
         }
