@@ -7,18 +7,11 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
-    public GameObject objectState1;
-    public GameObject objectState2;
+ 
 
     Vector2 movement;
     Vector2 LastMove;
     // Update is called once per frame
-
-    private void Awake()
-    {
-        objectState1.SetActive(true);
-        objectState2.SetActive(false);
-    }
 
     void Update()
     {
@@ -44,10 +37,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("LastMoveY", LastMove.y);
 
 
-        if (CoinManager.coinCount == 6)
+        if (itemManager.coinCount == 6)
         {
-            Destroy(objectState1);
-            objectState2.SetActive(true);
         }
 
     }

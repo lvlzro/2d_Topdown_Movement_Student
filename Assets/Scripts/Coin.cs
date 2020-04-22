@@ -3,7 +3,12 @@
 public class Coin : MonoBehaviour
 {
     float speed = 4f;
+    public GameObject player;
 
+    private void Awake()
+    {
+
+    }
     void Update()
     {
         gameObject.transform.Rotate(0, 90 * Time.deltaTime * speed, 0);
@@ -11,9 +16,10 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("picked up");
+      
+            Debug.Log("picked up");
+            itemManager.coinCount += 1;
+            Destroy(gameObject);
 
-        CoinManager.coinCount += 1;
-        Destroy(gameObject);
     }
 }

@@ -3,15 +3,29 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - CameraMovement
     - Coin
-    - CoinManager
-    - Dialog
+    - DialogSwitch
+    - DialogSwitch1
+    - DialogueManager
+    - DialogueTrigger
+    - DoorUnlock
+    - EndGame
+    - Gem
+    - PickUps
     - PlayerMovement
+    - StartQuest
+    - itemManager
+    - key
     Unity.2D.Sprite.Editor.dll:
     - UnityEditor.U2D.Sprites.SpriteEditorWindow
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
+    - UnityEditor.Tilemaps.GridPaintPaletteClipboard
+    - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
+    - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -19,10 +33,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -67,29 +79,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 574}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11156}
     - Class: 114
-      Script: {instanceID: 11468}
+      Script: {instanceID: 11208}
     - Class: 114
-      Script: {instanceID: 11508}
+      Script: {instanceID: 11228}
     - Class: 114
-      Script: {instanceID: 11782}
+      Script: {instanceID: 11266}
     - Class: 114
-      Script: {instanceID: 11926}
+      Script: {instanceID: 11334}
     - Class: 114
-      Script: {instanceID: 12138}
+      Script: {instanceID: 11374}
     - Class: 114
-      Script: {instanceID: 12244}
+      Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 12338}
+      Script: {instanceID: 11652}
     - Class: 114
-      Script: {instanceID: 12748}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 12850}
+      Script: {instanceID: 11966}
     - Class: 114
-      Script: {instanceID: 12952}
+      Script: {instanceID: 12012}
     - Class: 114
-      Script: {instanceID: 13234}
+      Script: {instanceID: 12118}
+    - Class: 114
+      Script: {instanceID: 12212}
+    - Class: 114
+      Script: {instanceID: 12376}
+    - Class: 114
+      Script: {instanceID: 12480}
+    - Class: 114
+      Script: {instanceID: 12626}
+    - Class: 114
+      Script: {instanceID: 12722}
+    - Class: 114
+      Script: {instanceID: 12730}
+    - Class: 114
+      Script: {instanceID: 13000}
+    - Class: 114
+      Script: {instanceID: 13114}
+    - Class: 114
+      Script: {instanceID: 37582}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -107,6 +137,10 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 320
+      Script: {instanceID: 0}
+    - Class: 19719996
       Script: {instanceID: 0}
     - Class: 156049354
       Script: {instanceID: 0}
@@ -141,10 +175,34 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 799b91dd7e43a40b693d3efb53f0714c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogueManager
+  - hash:
+      serializedVersion: 2
+      Hash: fdfcdfedb97b49b78f30ca1b89ee8a94
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogueTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: f6759679d53e0886230f6bba46e5ec73
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EndGame
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -214,6 +272,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Gem
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
@@ -255,7 +319,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: ca2922931615573c52b00dc692cf7e73
+      Hash: 35e676452be7593b4c6d1e43916a1785
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -309,6 +373,12 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 26ad20373d7198f5b9bdbb8f8fe20c93
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogSwitch
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -339,7 +409,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 83e769eee07fc231384c812eedbb8224
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Coin
@@ -373,6 +443,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: key
   - hash:
       serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
@@ -417,16 +493,22 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 744ac6b5f961eb61fee167b5a310a715
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogSwitch1
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 3207b625d4f8983827eae76b90a0e876
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: CoinManager
+    className: itemManager
   - hash:
       serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
@@ -441,6 +523,12 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
+      Hash: 744ac6b5f961eb61fee167b5a310a715
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DoorUnlock
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -453,12 +541,6 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 574117254c667f53c4a809348682c449
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Dialog
-  - hash:
-      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -469,6 +551,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: a306c0f68b70f8007feb15ddafaf2e5a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartQuest
   - hash:
       serializedVersion: 2
       Hash: df434544c9f7b33d1cc7e635b180d279
@@ -567,11 +655,11 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 744ac6b5f961eb61fee167b5a310a715
+      Hash: fdfcdfedb97b49b78f30ca1b89ee8a94
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: DialogSwitch
+    className: PickUps
   platform: 5
   scenePathNames:
   - Assets/Scenes/2d Scene.unity
-  playerPath: C:/Users/koolr/Documents/Builds/2D rpg controller/2d_Topdown_Movement.exe
+  playerPath: D:/Github/2d_Topdown_Movement_Student/GameBuildv3/2d_Topdown_Movement.exe
